@@ -61,9 +61,9 @@ public class Main {
 
 
          */
+
+
         /*
-
-
 
         //q3
         ArrayList<Integer> nums = new ArrayList<>();
@@ -81,7 +81,7 @@ public class Main {
         if(numberOf<=nums.size()){
             for (int j = 0; j <nums.size() ; j++) {
                 for (int k = 0; k <nums.size() ; k++) {
-                    if(Integer.valueOf(nums.get(j)) >Integer.valueOf(nums.get(k))) {
+                    if(nums.get(j) > nums.get(k)) {
                         int temp = nums.get(j);
                         nums.set(j, nums.get(k));
                         nums.set(k, temp);
@@ -94,7 +94,7 @@ public class Main {
         }else System.out.println("invalid input ");
         //input the numbers than sort them with for loop   and then  print  the number wanted
 
- */
+*/
 
 
         /*
@@ -256,13 +256,18 @@ public class Main {
         } else return 0 ;
     }
     public static void fibonacci(int i){
+        if (i==0){
+            System.out.println("invalid input ");
+        }else if(i==1){
+            System.out.println(0);
+        }else {
         int num1=0 , num2=1 ;
         System.out.print(num1+" "+num2);
         for (int j = 0; j < (i-1)/2; j++) {
             num1=num2+num1;
             num2=num2+num1;
             System.out.print(" "+num1+" "+num2+ " ");
-        }
+        } }
 
     }
 
