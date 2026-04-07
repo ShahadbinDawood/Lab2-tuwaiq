@@ -61,35 +61,42 @@ public class Main {
 
 
          */
-
-
         /*
+
+
+
         //q3
         ArrayList<Integer> nums = new ArrayList<>();
-        int k ;
+
         System.out.println("how many number you want to enter :");
         int index = input.nextInt();
         input.nextLine();
         for (int i = 0; i < index; i++) {
             System.out.print("enter your number : ");
-            int text =input.nextInt();
+            int text = input.nextInt();
             nums.add(text);
         }
         System.out.println("how many largest number you want to see  ?");
         int numberOf =input.nextInt();
         if(numberOf<=nums.size()){
-            nums.sort((a, b) -> { return -1 * a.compareTo(b); } );
-            System.out.println(numberOf+" largest elements of the said array are: ");
+            for (int j = 0; j <nums.size() ; j++) {
+                for (int k = 0; k <nums.size() ; k++) {
+                    if(Integer.valueOf(nums.get(j)) >Integer.valueOf(nums.get(k))) {
+                        int temp = nums.get(j);
+                        nums.set(j, nums.get(k));
+                        nums.set(k, temp);
+                    }}}
+            System.out.print(numberOf+" largest elements of the said array are: ");
             for (int i = 0; i <numberOf ; i++) {
                 System.out.print (nums.get(i)+" ");
 
             }
         }else System.out.println("invalid input ");
-        //input the numbers than sort them with method sort and then  print  the number wanted
+        //input the numbers than sort them with for loop   and then  print  the number wanted
+
+ */
 
 
-
-         */
         /*
         //q4
         int[] arr = {5,4,3,2,1};
@@ -98,15 +105,16 @@ public class Main {
 
          */
         /*
+
         //q5
         ArrayList<String> element = new ArrayList<>();
-        boolean countinue = true;
+
         int   max=99 ;
 
         while (element.size() < max){
 
 
-            System.out.println("1.Accept elements of an array \n 2.Display elements of the array \n 3.Search the element within array \n 4. Sort the array \n 5.To stop the size of the array should be entered  by the user ");
+            System.out.println("1.Accept elements of an array \n2.Display elements of the array \n3.Search the element within array \n4. Sort the array \n5.To stop the size of the array should be entered  by the user ");
 
             int i = input.nextInt() ;
             switch (i){
@@ -127,17 +135,34 @@ public class Main {
                     System.out.println("what do want to search ? ");
                     input.nextLine();
                     String s = input.nextLine();
+                    boolean found = false;
                     for (int j = 0; j < element.size(); j++) {
                         String text = element.get(j);
-                        if (text.contains(s)) {
+                        if (text.equalsIgnoreCase(s)) {
                             System.out.println(text);
-                        } else System.out.println(" ");
-                    }
+                            found=true;
+
+
+                        }
+
+                    }if (found){
+
+                    }else System.out.println("not found ");
+
                     break;
                 }
                 case 4:{
                     element.sort((a, b) -> { return -1 * a.compareTo(b); } );
+                    for (int j = 0; j <element.size() ; j++) {
+                        for (int k = 0; k <element.size() ; k++) {
+                            if(Integer.valueOf(element.get(j)) <Integer.valueOf(element.get(k))){
+                                String  temp = element.get(j);
+                                element.set(j,element.get(k)) ;
+                                element.set(k,temp);
 
+                            }
+                        }
+                    }
                     break;
                 }
                 case 5:{
@@ -150,9 +175,9 @@ public class Main {
                     System.out.println("input invalid ");
             }
         }
-        //used switch for the menu  and used while to continue the code used sort to sort and used for to print the element
-
+        //used switch for the menu  and used while to continue the code used for loop  to sort and used for to print the element
          */
+
         /*
         //q6
         int max , min ,num ;
